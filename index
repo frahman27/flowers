@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Flower Field for Fairooze</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body class="container">
+  <h1 class="title">A Flower Field for Fairooze 💐</h1>
+  <div class="night"></div>
+  <div class="flowers">
+    <!-- Flowers and leaves rendered here (same structure from your current project) -->
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
