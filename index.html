@@ -9,34 +9,44 @@
 <body class="container">
   <h1 class="title">For Fairooze 💐</h1>
 
+  <!-- Reveal message button -->
   <button class="reveal-btn" onclick="document.querySelector('.message').classList.add('show')">
     Tap to reveal a message 💌
   </button>
 
+  <!-- Hidden love message -->
   <div class="message">
     You are loved, always. 🌷<br>
     Every petal that falls is a little part of how much you mean to me.
   </div>
 
+  <!-- Wrapper animation for bouquet effect -->
   <div class="wrapper-animation"></div>
+
+  <!-- Falling petals effect -->
   <div class="petals"></div>
+
+  <!-- Background stars -->
   <div class="night"></div>
 
+  <!-- Flower wrapper -->
   <div class="flower-wrapper">
     <div class="flowers">
 
       <!-- Flower 1 -->
-      <div class="flower flower--3">
-        <div class="flower__leafs flower__leafs--3">
+      <div class="flower flower--1">
+        <div class="flower__leafs flower__leafs--1">
           <div class="flower__leaf flower__leaf--1"></div>
           <div class="flower__leaf flower__leaf--2"></div>
           <div class="flower__leaf flower__leaf--3"></div>
           <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"><>
-          <!-- lights -->
+          <div class="flower__white-circle"></div>
+          <div class="flower__light flower__light--1"></div>
+          <div class="flower__light flower__light--2"></div>
         </div>
         <div class="flower__line">
           <div class="flower__line__leaf flower__line__leaf--1"></div>
+          <div class="flower__line__leaf flower__line__leaf--2"></div>
         </div>
       </div>
 
@@ -48,41 +58,16 @@
           <div class="flower__leaf flower__leaf--3"></div>
           <div class="flower__leaf flower__leaf--4"></div>
           <div class="flower__white-circle"></div>
+          <div class="flower__light flower__light--3"></div>
+          <div class="flower__light flower__light--4"></div>
         </div>
         <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
+          <div class="flower__line__leaf flower__line__leaf--3"></div>
+          <div class="flower__line__leaf flower__line__leaf--4"></div>
         </div>
       </div>
 
-      <!-- Flower 3 (Center) -->
-      <div class="flower flower--1">
-        <div class="flower__leafs flower__leafs--1">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"></div>
-        </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-        </div>
-      </div>
-
-      <!-- Flower 4 -->
-      <div class="flower flower--2">
-        <div class="flower__leafs flower__leafs--2">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"></div>
-        </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-        </div>
-      </div>
-
-      <!-- Flower 5 -->
+      <!-- Flower 3 (center) -->
       <div class="flower flower--3">
         <div class="flower__leafs flower__leafs--3">
           <div class="flower__leaf flower__leaf--1"></div>
@@ -90,16 +75,56 @@
           <div class="flower__leaf flower__leaf--3"></div>
           <div class="flower__leaf flower__leaf--4"></div>
           <div class="flower__white-circle"></div>
+          <div class="flower__light flower__light--5"></div>
+          <div class="flower__light flower__light--6"></div>
+        </div>
+        <div class="flower__line">
+          <div class="flower__line__leaf flower__line__leaf--5"></div>
+          <div class="flower__line__leaf flower__line__leaf--6"></div>
+        </div>
+      </div>
+
+      <!-- Flower 4 -->
+      <div class="flower flower--4">
+        <div class="flower__leafs flower__leafs--1">
+          <div class="flower__leaf flower__leaf--1"></div>
+          <div class="flower__leaf flower__leaf--2"></div>
+          <div class="flower__leaf flower__leaf--3"></div>
+          <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__white-circle"></div>
+          <div class="flower__light flower__light--7"></div>
+          <div class="flower__light flower__light--8"></div>
         </div>
         <div class="flower__line">
           <div class="flower__line__leaf flower__line__leaf--1"></div>
+          <div class="flower__line__leaf flower__line__leaf--2"></div>
+        </div>
+      </div>
+
+      <!-- Flower 5 -->
+      <div class="flower flower--5">
+        <div class="flower__leafs flower__leafs--2">
+          <div class="flower__leaf flower__leaf--1"></div>
+          <div class="flower__leaf flower__leaf--2"></div>
+          <div class="flower__leaf flower__leaf--3"></div>
+          <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__white-circle"></div>
+          <div class="flower__light flower__light--1"></div>
+          <div class="flower__light flower__light--3"></div>
+        </div>
+        <div class="flower__line">
+          <div class="flower__line__leaf flower__line__leaf--3"></div>
+          <div class="flower__line__leaf flower__line__leaf--4"></div>
         </div>
       </div>
 
     </div>
   </div>
 
+  <!-- Background Music -->
   <audio id="background-music" loop preload="auto" src="assets/background.mp3"></audio>
+
+  <!-- JavaScript for music + petals -->
   <script src="main.js"></script>
 </body>
 </html>
