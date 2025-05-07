@@ -3,16 +3,16 @@ window.addEventListener('DOMContentLoaded', () => {
   const playMusicAndStart = () => {
     const music = document.getElementById('background-music');
     music.play().catch((e) => {
-      console.log('Music autoplay blocked:', e);
+      console.log('Music autopl blocked:', e);
     });
     document.body.classList.remove("container");
   };
 
-  // Listen to both click and touchstart
+  // Listen for first interaction (both mobile + desktop)
   window.addEventListener('click', playMusicAndStart, { once: true });
   window.addEventListener('touchstart', playMusicAndStart, { once: true });
 
-  // 🌸 Falling petals generator
+  // 🌸 Create falling petals
   function createPetal() {
     const petal = document.createElement('div');
     petal.classList.add('petal');
@@ -25,5 +25,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 8000);
   }
 
+  // Generate petals continuously
   setInterval(createPetal, 400);
 });
