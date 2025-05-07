@@ -9,17 +9,20 @@
 <body class="container">
   <h1 class="title">A Flower Field for Fairooze 💐</h1>
 
+  <!-- Bouquet wrapping animation -->
+  <div class="wrapper-animation"></div>
+
   <div class="night"></div>
 
   <div class="flowers">
-    <div class="flower flower--1">
+    <!-- Original flower (center) -->
+    <div class="flower flower--1" style="left: 45%;">
       <div class="flower__leafs flower__leafs--1">
         <div class="flower__leaf flower__leaf--1"></div>
         <div class="flower__leaf flower__leaf--2"></div>
         <div class="flower__leaf flower__leaf--3"></div>
         <div class="flower__leaf flower__leaf--4"></div>
         <div class="flower__white-circle"></div>
-
         <div class="flower__light flower__light--1"></div>
         <div class="flower__light flower__light--2"></div>
         <div class="flower__light flower__light--3"></div>
@@ -37,6 +40,18 @@
         <div class="flower__line__leaf flower__line__leaf--5"></div>
         <div class="flower__line__leaf flower__line__leaf--6"></div>
       </div>
+    </div>
+
+    <!-- Extra flower left -->
+    <div class="flower flower--2" style="left: 30%; transform: scale(0.95) rotate(-5deg);">
+      <div class="flower__leafs flower__leafs--2"> ... (same as above) </div>
+      <div class="flower__line"> ... </div>
+    </div>
+
+    <!-- Extra flower right -->
+    <div class="flower flower--3" style="left: 60%; transform: scale(0.95) rotate(5deg);">
+      <div class="flower__leafs flower__leafs--3"> ... </div>
+      <div class="flower__line"> ... </div>
     </div>
   </div>
 
