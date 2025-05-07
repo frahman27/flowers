@@ -1435,4 +1435,19 @@ body {
     opacity: 0;
   }
 }
+.flower-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.flowers {
+  position: relative;
+  transform: scale(0.9);
+  width: 50vmax;
+  display: flex;
+  justify-content: space-between;
+}
+
 
