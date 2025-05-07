@@ -1,166 +1,171 @@
+/* Reset */
 *,
-*::after,
-*::before {
-  padding: 0;
+*::before,
+*::after {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+/* Body Setup */
 body {
-  background-color: #0b0c10;
-  font-family: 'Comic Sans MS', cursive;
+  background-color: #000;
+  color: white;
+  font-family: 'Fredoka One', cursive;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  text-align: center;
+  justify-content: flex-end;
   position: relative;
 }
 
+/* Title */
 .title {
-  margin-top: 2rem;
-  font-size: 2.5rem;
-  color: #ffffff;
-  text-shadow: 0 0 8px #fff;
+  position: absolute;
+  top: 3vh;
+  width: 100%;
+  text-align: center;
+  font-size: 2.5em;
+  color: #fff;
+  text-shadow: 0 0 10px #ff9fcb;
+  z-index: 10;
 }
 
+/* Reveal Button */
 .reveal-btn {
-  margin: 1.5rem;
-  padding: 1rem 1.5rem;
-  font-size: 1.2rem;
+  background-color: #fff;
   border: none;
-  border-radius: 8px;
-  background-color: #ffccf9;
-  color: #3b3b3b;
+  padding: 1em 2em;
+  font-size: 1em;
+  margin-top: 2em;
+  border-radius: 2em;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(255, 204, 249, 0.7);
-  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px #ffb3d1;
+  transition: all 0.3s ease;
 }
 .reveal-btn:hover {
-  transform: scale(1.05);
+  background-color: #ffe5f0;
 }
 
+/* Message */
 .message {
-  font-size: 1.3rem;
-  color: #fff;
-  opacity: 0;
-  transition: opacity 1s ease;
-  margin-bottom: 2rem;
+  display: none;
+  margin-top: 2em;
+  font-size: 1.3em;
+  text-align: center;
+  color: #fffbe6;
+  animation: fadeIn 2s forwards;
 }
 .message.show {
-  opacity: 1;
+  display: block;
 }
 
-.flower-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+/* Animation Keyframes */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-.flower {
-  position: relative;
-  animation: sway 3s infinite ease-in-out;
-}
-@keyframes sway {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(2deg); }
-  100% { transform: rotate(0deg); }
-}
-
-.flower__leafs {
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-
-.flower__leaf {
+/* Petals / Background */
+.petal, .wrapper-animation, .night {
   position: absolute;
-  width: 40px;
-  height: 60px;
-  background: white;
-  border-radius: 50% 50% 0 0;
-  transform-origin: bottom center;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-}
-
-.flower__leaf--1 { transform: rotate(0deg) translateY(-30px); }
-.flower__leaf--2 { transform: rotate(72deg) translateY(-30px); }
-.flower__leaf--3 { transform: rotate(144deg) translateY(-30px); }
-.flower__leaf--4 { transform: rotate(216deg) translateY(-30px); }
-.flower__white-circle {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 40px;
-  height: 40px;
-  background: #fff;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.flower__light {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  background: #fffa65;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #fffa65;
-  animation: twinkle 2s infinite alternate;
-}
-@keyframes twinkle {
-  from { opacity: 0.3; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1.2); }
-}
-
-.flower__line {
-  width: 4px;
-  height: 80px;
-  background: linear-gradient(to top, #4caf50, #a5d6a7);
-  margin: 0 auto;
-  border-radius: 2px;
-}
-
-.flower__line__leaf {
-  width: 12px;
-  height: 6px;
-  background: #388e3c;
-  border-radius: 50%;
-  margin: 4px auto;
-}
-
-.night {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(ellipse at top, #1c1c1c, #000);
-  z-index: -1;
-  top: 0;
-  left: 0;
-}
-
-.petals {
-  position: absolute;
-  top: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  overflow: hidden;
 }
 
-.wrapper-animation {
+/* Flowers Container */
+.flower-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 6vw;
+  padding-bottom: 10vmin;
+  flex-wrap: wrap;
+}
+
+/* Each Flower */
+.flower {
+  position: relative;
+  width: 6vmin;
+  height: 6vmin;
+  animation: sway 3s ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+  0% { transform: rotate(2deg); }
+  100% { transform: rotate(-2deg); }
+}
+
+/* Leafs Container */
+.flower__leafs {
+  position: relative;
+  animation: bloom 2s ease forwards;
+}
+
+@keyframes bloom {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Leaf Shape */
+.flower__leaf {
+  position: absolute;
+  width: 8vmin;
+  height: 11vmin;
+  left: 50%;
+  bottom: 0;
+  border-radius: 50% 50% 40% 60% / 50% 60% 40% 50%;
+  background: #fff;
+  background-image: linear-gradient(to top, #fefefe, #e5e5e5);
+  transform-origin: bottom center;
+  opacity: 0.9;
+  box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.6);
+}
+
+/* Leaf Positions */
+.flower__leaf--1 { transform: translate(-10%, 1%) rotateY(40deg) rotateX(-50deg); }
+.flower__leaf--2 { transform: translate(-50%, -4%) rotateX(40deg); }
+.flower__leaf--3 { transform: translate(-90%, 0%) rotateY(45deg) rotateX(50deg); }
+.flower__leaf--4 {
+  width: 8vmin;
+  height: 8vmin;
+  transform: translate(-50%, -40%) rotate(45deg);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 3vmin rgba(255, 255, 255, 0.5);
+}
+
+/* Flower center */
+.flower__white-circle {
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background: white;
+  border-radius: 50%;
+  bottom: 5vmin;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Stem */
+.flower__line {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(to top, #1f1f1f, transparent);
-  z-index: 0;
+  left: 50%;
+  width: 0.5vmin;
+  height: 20vmin;
+  background-color: #2f7d32;
+  transform: translateX(-50%);
+  border-radius: 0.25vmin;
+}
+
+/* Background Night Stars */
+.night {
+  background: radial-gradient(ellipse at top, rgba(255, 255, 255, 0.3), transparent),
+              radial-gradient(ellipse at bottom, #000, #111);
+  z-index: -1;
 }
